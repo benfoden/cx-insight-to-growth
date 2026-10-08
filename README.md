@@ -1,16 +1,13 @@
 # CX insight to growth
 
-Turn customer feedback and website data into three simple, one-page reports: one each for
-**sales**, **marketing** and **product**. Each page shows the 3 most important findings and the next
+Turn customer data into reportsfor **sales**, **marketing** and **product** team leaders, in their own language.
 step for each one.
 
-Works with **Claude**, **ChatGPT**, **Gemini** or any other AI chat.
-
-**See examples:** [Sales brief](examples/sales.pdf) · [Marketing brief](examples/marketing.pdf) · [Product brief](examples/product.pdf)
+**Examples:** [Sales brief](examples/sales.pdf) · [Marketing brief](examples/marketing.pdf) · [Product brief](examples/product.pdf)
 
 ---
 
-## Contents
+## How to use this
 
 1. [What you need](#what-you-need)
 2. [Set it up](#set-it-up)
