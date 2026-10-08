@@ -1,7 +1,8 @@
 # CX insight to growth
 
-Turn customer data into reportsfor **sales**, **marketing** and **product** team leaders, in their own language.
-step for each one.
+Turn customer data into reports for **sales**, **marketing** and **product** team leaders, in their own language.
+The sales page matches shopper doubts to proof from happy customers. The marketing page lists the exact
+words customers use when they praise you.
 
 **Examples:** [Sales brief](examples/sales.pdf) · [Marketing brief](examples/marketing.pdf) · [Product brief](examples/product.pdf)
 

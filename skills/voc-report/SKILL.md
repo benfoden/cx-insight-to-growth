@@ -42,6 +42,8 @@ Pasted text: save it as a .csv or .txt file first. If you cannot run code, calcu
 | Ticket share | tickets on a topic / all tickets |
 | Negative share | tickets that complain or show frustration / tickets on that topic |
 | CSAT | mean of the scores that exist |
+| Praise | tickets that praise a product or the team (praise tag, or positive words and no question) |
+| Phrase count | praise tickets that contain the exact word group |
 
 Every number in a report must come from this step. Round to whole numbers unless the value is under 10.
 
@@ -49,13 +51,25 @@ Every number in a report must come from this step. Round to whole numbers unless
 
 1. Group tickets into 5 to 8 topics. Start from tags. Read the untagged and catch-all tickets
    ("general", "other"): they often hold a new topic that no tag covers. Name it if 3 or more tickets share it.
-2. Join sources. The strongest findings show one cause in two places, for example a topic that rises
+2. Read the praise. In the `praise` output (or by hand), find what customers like most: the products
+   they name most (`named_most`), the word groups they repeat (`phrases`), and how many say they will
+   buy again or recommend you (`repeat_signals`).
+3. Join sources. The strongest findings show one cause in two places, for example a topic that rises
    in tickets while a funnel step drops, or a search term with a high exit rate that matches a ticket topic.
-3. Pick the 3 findings that matter most for each team:
+4. Pick the 3 findings that matter most for each team:
    - **Sales:** questions and doubts that stop a first purchase, the answer to each, and proof customers give.
    - **Marketing:** channels that convert or waste spend, promises that create friction, the words customers use.
    - **Product:** where the funnel leaks, gaps between devices, defects, and missing information.
-4. Each finding gets one next step: a concrete action that team owns this month.
+
+   For sales and marketing, at least 1 of the 3 findings is a strength to use, not a problem to fix.
+   Base it on the praise. Skip this rule only if there is no praise in the data.
+5. Each finding gets one next step: a concrete action that team owns this month.
+6. Match doubts to proof (sales). For each top pre-purchase doubt, find praise that answers it. For
+   example: "Is it waterproof?" matches "stayed completely dry". If no praise answers a doubt, say so.
+7. Find the words gap (marketing). Look for words that customers use often (in praise, tickets or site
+   search) but that the site or ads do not use, or a promise the site does not prove.
+8. Match the strength to a channel (marketing). Name the best-converting channel for the product or
+   message that customers praise most.
 
 ## 4. Write each page
 
@@ -68,6 +82,10 @@ Fill in `template.html`. Keep the page to these blocks only, so it stays easy to
 - **Exhibit 1:** one bar chart with max 6 rows. Its title states the conclusion. Highlight only the bar
   the finding is about. Add the source line.
 - **One customer quote** that makes finding 1 real. Remove names, order numbers, emails, phone numbers.
+- **Sales page only: Doubts and proof.** A table with max 3 rows: the shopper doubt (with ticket
+  count), the answer to give, and the proof (an exact customer phrase with its ticket count).
+- **Marketing page only: In their words.** Max 4 exact phrases from praise, each with its ticket count,
+  and one line that names the words gap. These blocks use space: keep each next step to one line.
 - **Follow-up offer** and footnote: keep as in the template.
 
 Delete a block if there is no data for it. Do not add blocks. Keep generous white space.
@@ -79,6 +97,7 @@ Do not use em dashes.
 ## 5. Check before you deliver
 
 - Each number on the page exists in the step 2 output.
+- Each phrase in quotation marks occurs word for word in the data. Each talking point has a count.
 - Each page fits on one printed Letter page.
 - The three pages do not repeat the same three findings. Shared causes are fine; the angle and next step differ.
 

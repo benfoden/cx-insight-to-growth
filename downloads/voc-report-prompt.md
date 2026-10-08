@@ -39,6 +39,8 @@ Pasted text: save it as a .csv or .txt file first. If you cannot run code, calcu
 | Ticket share | tickets on a topic / all tickets |
 | Negative share | tickets that complain or show frustration / tickets on that topic |
 | CSAT | mean of the scores that exist |
+| Praise | tickets that praise a product or the team (praise tag, or positive words and no question) |
+| Phrase count | praise tickets that contain the exact word group |
 
 Every number in a report must come from this step. Round to whole numbers unless the value is under 10.
 
@@ -46,13 +48,25 @@ Every number in a report must come from this step. Round to whole numbers unless
 
 1. Group tickets into 5 to 8 topics. Start from tags. Read the untagged and catch-all tickets
    ("general", "other"): they often hold a new topic that no tag covers. Name it if 3 or more tickets share it.
-2. Join sources. The strongest findings show one cause in two places, for example a topic that rises
+2. Read the praise. In the `praise` output (or by hand), find what customers like most: the products
+   they name most (`named_most`), the word groups they repeat (`phrases`), and how many say they will
+   buy again or recommend you (`repeat_signals`).
+3. Join sources. The strongest findings show one cause in two places, for example a topic that rises
    in tickets while a funnel step drops, or a search term with a high exit rate that matches a ticket topic.
-3. Pick the 3 findings that matter most for each team:
+4. Pick the 3 findings that matter most for each team:
    - **Sales:** questions and doubts that stop a first purchase, the answer to each, and proof customers give.
    - **Marketing:** channels that convert or waste spend, promises that create friction, the words customers use.
    - **Product:** where the funnel leaks, gaps between devices, defects, and missing information.
-4. Each finding gets one next step: a concrete action that team owns this month.
+
+   For sales and marketing, at least 1 of the 3 findings is a strength to use, not a problem to fix.
+   Base it on the praise. Skip this rule only if there is no praise in the data.
+5. Each finding gets one next step: a concrete action that team owns this month.
+6. Match doubts to proof (sales). For each top pre-purchase doubt, find praise that answers it. For
+   example: "Is it waterproof?" matches "stayed completely dry". If no praise answers a doubt, say so.
+7. Find the words gap (marketing). Look for words that customers use often (in praise, tickets or site
+   search) but that the site or ads do not use, or a promise the site does not prove.
+8. Match the strength to a channel (marketing). Name the best-converting channel for the product or
+   message that customers praise most.
 
 ## 4. Write each page
 
@@ -65,6 +79,10 @@ Fill in the page template at the end of this prompt. Keep the page to these bloc
 - **Exhibit 1:** one bar chart with max 6 rows. Its title states the conclusion. Highlight only the bar
   the finding is about. Add the source line.
 - **One customer quote** that makes finding 1 real. Remove names, order numbers, emails, phone numbers.
+- **Sales page only: Doubts and proof.** A table with max 3 rows: the shopper doubt (with ticket
+  count), the answer to give, and the proof (an exact customer phrase with its ticket count).
+- **Marketing page only: In their words.** Max 4 exact phrases from praise, each with its ticket count,
+  and one line that names the words gap. These blocks use space: keep each next step to one line.
 - **Follow-up offer** and footnote: keep as in the template.
 
 Delete a block if there is no data for it. Do not add blocks. Keep generous white space.
@@ -76,6 +94,7 @@ Do not use em dashes.
 ## 5. Check before you deliver
 
 - Each number on the page exists in the step 2 output.
+- Each phrase in quotation marks occurs word for word in the data. Each talking point has a count.
 - Each page fits on one printed Letter page.
 - The three pages do not repeat the same three findings. Shared causes are fine; the angle and next step differ.
 
@@ -165,6 +184,15 @@ Copy this HTML for each page and replace every {{...}}.
   blockquote { margin: 28px 0 0; padding: 2px 0 2px 14px; border-left: 1px solid var(--blue);
                font: italic 12px/1.5 Georgia, serif; color: var(--ink); }
   blockquote cite { display: block; font: normal 9.5px/1.4 "Helvetica Neue", Arial, sans-serif; color: var(--soft); margin-top: 6px; }
+  .extra { border-top: 1px solid var(--rule); padding-top: 18px; margin-bottom: 14px; }
+  .extra td:first-child { width: 30%; } .extra td:nth-child(2) { width: 33%; }
+  .proof { font-family: Georgia, serif; font-style: italic; color: var(--ink); }
+  .count { color: var(--soft); font-size: 9.5px; white-space: nowrap; }
+  .words .count { display: block; margin-top: 2px; }
+  .words { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 4px 0 12px; }
+  .words b { display: block; font: italic 400 15px/1.3 Georgia, serif; color: var(--navy); }
+  .gap { margin: 0; color: var(--mid); }
+  .gap b { color: var(--ink); font-weight: 600; }
   .more { margin-top: auto; background: var(--tint); padding: 14px 16px; color: var(--mid); }
   .more b { color: var(--navy); }
   .foot { color: var(--soft); font-size: 9px; padding-top: 10px; }
@@ -174,8 +202,8 @@ Copy this HTML for each page and replace every {{...}}.
   th { text-align: left; font-weight: 700; color: var(--navy); padding: 6px 10px 6px 0; border-bottom: 1px solid var(--navy); }
   td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
   @media print { body { background: none; } .page { margin: 0; min-height: 0; height: 11in; overflow: hidden; } .page + .page { break-before: page; } }
-  @media (max-width: 820px) { .page { width: auto; min-height: 0; margin: 0; padding: 32px 18px; }
-                             .kpis, .body { grid-template-columns: 1fr; } }
+  @media screen and (max-width: 820px) { .page { width: auto; min-height: 0; margin: 0; padding: 32px 18px; }
+                             .kpis, .body { grid-template-columns: 1fr; } .words { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
 <body>
@@ -228,6 +256,27 @@ Copy this HTML for each page and replace every {{...}}.
       <!-- One short customer quote that makes finding 1 real. Remove order numbers, names, emails, phone numbers. -->
       <blockquote>{{Quote}}<cite>{{Customer type or topic}}, {{month}}</cite></blockquote>
     </div>
+  </div>
+
+  <!-- SALES PAGE ONLY. Doubts and proof: max 3 rows, one short line per cell. Proof is an exact customer phrase with its ticket count.
+       If no praise answers a doubt, write "No proof yet" and what to get. Delete this block on other pages. -->
+  <div class="extra">
+    <h2>Doubts and proof</h2>
+    <table>
+      <tr><th>Shopper doubt</th><th>Answer to give</th><th>Proof from customers</th></tr>
+      <tr><td>{{Doubt in the shopper's words}} <span class="count">{{n}} tickets</span></td><td>{{Answer}}</td><td><span class="proof">“{{exact phrase}}”</span> <span class="count">{{n}} tickets</span></td></tr>
+    </table>
+  </div>
+
+  <!-- MARKETING PAGE ONLY. In their words: max 4 exact phrases from praise, each with its ticket count,
+       then one line that names the words gap. Delete this block on other pages. -->
+  <div class="extra">
+    <h2>In their words</h2>
+    <div class="words">
+      <div><b>“{{exact phrase}}”</b><span class="count">{{n}} tickets</span></div>
+      <div><b>“{{exact phrase}}”</b><span class="count">{{n}} tickets</span></div>
+    </div>
+    <p class="gap"><b>Words gap:</b> {{a word customers use that the site or ads do not, with a number}}</p>
   </div>
 
   <div class="more"><b>Want more detail?</b> Ask for a detailed report on any finding or topic, for example

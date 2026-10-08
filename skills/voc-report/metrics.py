@@ -28,6 +28,9 @@ STEPS = ["view_item", "add_to_cart", "begin_checkout", "add_shipping_info", "add
 POS = {"love": 3, "amazing": 3, "excellent": 3, "best": 2, "great": 2, "perfect": 2, "helpful": 2, "happy": 2, "thanks": 1, "thank": 1, "recommend": 2, "recommending": 2, "easy": 1, "fast": 1}
 NEG = {"frustrating": 3, "annoying": 2, "invalid": 1, "failing": 2, "fails": 2, "error": 2, "late": 1, "stuck": 2, "never": 1, "unhappy": 2, "broken": 3,
        "worst": 3, "disappointed": 3, "expensive": 2, "abandoned": 2, "won't": 1, "hasn't": 1, "can't": 1, "slow": 2, "delay": 2, "competitor": 2, "amazon": 1, "missing": 1}
+STOP = set("a an and are as at be but by for from i i'm in is it it's its me my of on or so that the this to was we were with you your".split())
+REPEAT = {"buy_again": r"\b(buy|order|shop) (here |from you )?again\b|\bnext (purchase|order)\b",
+          "recommend": r"\brecommend(ing|ed|s)?\b|\btold (my|a) (friends?|group)\b"}
 
 
 def col(row, key):
@@ -145,6 +148,51 @@ def sentiment(text):
     return "positive" if score >= 2 else "negative" if score <= -2 else "neutral"
 
 
+def phrases(texts, ids, top=12):
+    """Word groups (2 to 6 words, inside one sentence) in 2 or more tickets, longest form kept.
+    Also returns capitalized names (products, places) in 2 or more tickets, kept out of the phrases."""
+    seen, named = defaultdict(set), defaultdict(set)
+    for t, tid in zip(texts, ids):
+        for m in re.findall(r"\b[A-Z][a-z0-9]+(?: (?:[A-Z][a-z0-9]+|\d+))+", t):
+            w = m.lower().split()
+            while w and w[0] in STOP:
+                w.pop(0)
+            if len(w) > 1:
+                named[" ".join(w)].add(tid)
+        for part in re.split(r"[.!?;:,()]+", t):
+            w = re.findall(r"[a-z0-9']+", part.lower())
+            for n in range(2, 7):
+                for k in range(len(w) - n + 1):
+                    g = w[k:k + n]
+                    if g[0] not in STOP and g[-1] not in STOP:
+                        seen[" ".join(g)].add(tid)
+    names = [n for n in named if len(named[n]) >= 2]
+    hits = {g: ids for g, ids in seen.items() if len(ids) >= 2 and not any(g in n for n in names)}
+    keep = [g for g, i in hits.items() if not any(g != h and f" {g} " in f" {h} " and hits[h] == i for h in hits)]
+    keep.sort(key=lambda g: (-len(hits[g]), -len(g)))
+    return ([{"phrase": g, "tickets": len(hits[g]), "ticket_ids": sorted(hits[g])} for g in keep[:top]],
+            sorted(({"name": n, "tickets": len(named[n])} for n in names), key=lambda x: -x["tickets"]))
+
+
+def praise(rows, m, sb, tg, cs, d):
+    """Positive tickets: praise tags, or positive wording with no question in it."""
+    pos = [r for r in rows if r["_tag"] in ("praise", "compliment", "positive", "feedback-positive")
+           or (r["_sent"] == "positive" and "?" not in str(r[m]))]
+    if not pos:
+        return None
+    text = [str(r[m]) for r in pos]
+    ph, named = phrases(text, [r["_id"] for r in pos])
+    out = {"count": len(pos), "share_pct": pct(len(pos), len(rows)), "phrases": ph, "named_most": named,
+           "repeat_signals": {k: {"tickets": len(i), "ticket_ids": i} for k, rx in REPEAT.items()
+                              for i in [[r["_id"] for r, t in zip(pos, text) if re.search(rx, t.lower())]]},
+           "quotes": [{"id": r["_id"], "text": str(r[m]), "date": str(r[d])[:10] if d else None}
+                      for r in sorted(pos, key=lambda r: -len(str(r[m])))[:8]],
+           "note": "phrases = exact word groups from positive tickets; ticket_ids let you check each one. named_most = products or names praised most"}
+    c = [num(r[cs]) for r in pos if cs and is_num(r.get(cs))]
+    out["csat_avg"] = round(sum(c) / len(c), 2) if c else None
+    return out
+
+
 def tickets(rows):
     r0 = rows[0]
     m, sb, tg, cs, d, stg, i = (col(r0, k) for k in ("message", "subject", "tags", "csat", "date", "stage", "id"))
@@ -176,7 +224,9 @@ def tickets(rows):
                               "negative_pct": pct(sum(r["_sent"] == "negative" for r in rs), len(rs)),
                               "csat_avg": round(sum(c) / len(c), 2) if c else None,
                               "first_half": a, "second_half": len(rs) - a if a is not None else None,
+                              "positive_pct": pct(sum(r["_sent"] == "positive" for r in rs), len(rs)),
                               "ticket_ids": [r["_id"] for r in rs][:40]})
+    out["praise"] = praise(rows, m, sb, tg, cs, d)
     return out
 
 
