@@ -21,7 +21,7 @@ Use the first option that works. Do not use sample data unless the user asks for
    - Team notes: paste support team observations as plain text.
 
 One source is enough to start. Say which sources are missing and what they would add.
-If the user asks for a demo, use the sample files if you have them. If not, ask the user to download and upload them from https://github.com/benfoden/cx-insight-to-growth/tree/main/skills/voc-report/sample-data
+If the user asks for a demo, use the sample files if you have them. If not, ask the user to download and upload them from https://github.com/benfoden/cx-insight-to-growth/tree/HEAD/skills/voc-report/sample-data
 
 ## 2. Calculate
 

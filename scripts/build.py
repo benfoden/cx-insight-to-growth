@@ -9,7 +9,7 @@ import os, re, zipfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKILL = os.path.join(ROOT, "skills", "voc-report")
 OUT = os.path.join(ROOT, "downloads")
-DEMO = "https://github.com/benfoden/cx-insight-to-growth/tree/main/skills/voc-report/sample-data"
+DEMO = "https://github.com/benfoden/cx-insight-to-growth/tree/HEAD/skills/voc-report/sample-data"
 
 
 def swap(text, old, new):
