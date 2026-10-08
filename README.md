@@ -42,11 +42,11 @@ Pick the AI you use. Each setup takes about 5 minutes and you do it only once.
 
 | Your AI | What you download |
 |---|---|
-| [Claude (claude.ai)](#claude-claudeai) | [voc-report-skill.zip](downloads/voc-report-skill.zip) |
-| [Claude Code](#claude-code) | Nothing: type two commands |
-| [ChatGPT](#chatgpt) | [chatgpt-gemini-files.zip](downloads/chatgpt-gemini-files.zip) |
-| [Gemini](#gemini) | [chatgpt-gemini-files.zip](downloads/chatgpt-gemini-files.zip) |
-| [Any other AI](#any-other-ai) | [voc-report-prompt.md](downloads/voc-report-prompt.md) |
+| Claude | [voc-report-skill.zip](downloads/voc-report-skill.zip) |
+| Claude Code | Nothing: type two commands |
+| ChatGPT | [chatgpt-gemini-files.zip](downloads/chatgpt-gemini-files.zip) |
+| Gemini | [chatgpt-gemini-files.zip](downloads/chatgpt-gemini-files.zip) |
+| Simple prompt | [voc-report-prompt.md](downloads/voc-report-prompt.md) |
 
 To download a file: click its link, then click **Download raw file** (the arrow icon at the top right).
 
