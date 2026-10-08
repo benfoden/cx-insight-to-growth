@@ -1,4 +1,4 @@
-# CX insight to growth reports
+# Build growth reports from CX data
 
 Turn customer data into reports for **sales**, **marketing** and **product** team leaders, in their own language.
 The sales page matches shopper doubts to proof from happy customers. The marketing page lists the exact
