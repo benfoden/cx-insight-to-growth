@@ -1,0 +1,8 @@
+{
+  "name": "cx-insight-to-growth",
+  "version": "1.0.0",
+  "description": "One-page customer insight briefs for sales, marketing and product teams, from support tickets, CSAT, team notes and Google Analytics.",
+  "author": { "name": "Ben Foden" },
+  "repository": "https://github.com/benfoden/cx-insight-to-growth",
+  "keywords": ["voc", "customer-insights", "support-tickets", "analytics", "reports"]
+}

@@ -1,0 +1,97 @@
+week,channel,device,sessions,purchases,revenue
+2026-07-27,Direct,desktop,1659,65,7653
+2026-07-27,Direct,mobile,1879,41,4608
+2026-07-27,Email,desktop,875,45,5186
+2026-07-27,Email,mobile,1219,33,3891
+2026-07-27,Organic Search,desktop,3491,107,13041
+2026-07-27,Organic Search,mobile,6353,105,11672
+2026-07-27,Paid Search,desktop,1841,66,7804
+2026-07-27,Paid Search,mobile,3065,63,7242
+2026-07-27,Paid Social,desktop,604,3,257
+2026-07-27,Paid Social,mobile,5696,35,4029
+2026-07-27,Referral,desktop,524,9,1211
+2026-07-27,Referral,mobile,526,4,471
+2026-08-03,Direct,desktop,1628,63,7773
+2026-08-03,Direct,mobile,1783,40,5139
+2026-08-03,Email,desktop,897,46,5309
+2026-08-03,Email,mobile,1220,35,4354
+2026-08-03,Organic Search,desktop,3454,103,12340
+2026-08-03,Organic Search,mobile,6354,114,13174
+2026-08-03,Paid Search,desktop,1722,64,7248
+2026-08-03,Paid Search,mobile,3031,58,6943
+2026-08-03,Paid Social,desktop,589,3,326
+2026-08-03,Paid Social,mobile,5684,36,4387
+2026-08-03,Referral,desktop,503,9,1035
+2026-08-03,Referral,mobile,524,5,526
+2026-08-10,Direct,desktop,1692,65,8059
+2026-08-10,Direct,mobile,1857,41,4363
+2026-08-10,Email,desktop,892,43,4762
+2026-08-10,Email,mobile,1203,35,4022
+2026-08-10,Organic Search,desktop,3378,103,12114
+2026-08-10,Organic Search,mobile,6206,113,13599
+2026-08-10,Paid Search,desktop,1759,61,6906
+2026-08-10,Paid Search,mobile,3099,60,6786
+2026-08-10,Paid Social,desktop,594,3,245
+2026-08-10,Paid Social,mobile,5605,36,4698
+2026-08-10,Referral,desktop,524,10,1063
+2026-08-10,Referral,mobile,519,3,280
+2026-08-17,Direct,desktop,1653,66,8371
+2026-08-17,Direct,mobile,1873,43,5405
+2026-08-17,Email,desktop,869,43,4818
+2026-08-17,Email,mobile,1167,30,3409
+2026-08-17,Organic Search,desktop,3315,101,11446
+2026-08-17,Organic Search,mobile,6428,110,12408
+2026-08-17,Paid Search,desktop,1715,61,7263
+2026-08-17,Paid Search,mobile,3090,62,7271
+2026-08-17,Paid Social,desktop,571,3,290
+2026-08-17,Paid Social,mobile,5685,35,4022
+2026-08-17,Referral,desktop,516,9,1035
+2026-08-17,Referral,mobile,510,3,388
+2026-08-24,Direct,desktop,1643,59,7042
+2026-08-24,Direct,mobile,1849,27,3395
+2026-08-24,Email,desktop,894,41,4890
+2026-08-24,Email,mobile,1222,23,2568
+2026-08-24,Organic Search,desktop,3383,92,11375
+2026-08-24,Organic Search,mobile,6347,79,8621
+2026-08-24,Paid Search,desktop,1704,57,6796
+2026-08-24,Paid Search,mobile,3042,43,4923
+2026-08-24,Paid Social,desktop,578,3,294
+2026-08-24,Paid Social,mobile,5596,24,2567
+2026-08-24,Referral,desktop,510,9,834
+2026-08-24,Referral,mobile,521,3,248
+2026-08-31,Direct,desktop,1612,55,6861
+2026-08-31,Direct,mobile,1816,28,3260
+2026-08-31,Email,desktop,871,36,4169
+2026-08-31,Email,mobile,1224,25,2704
+2026-08-31,Organic Search,desktop,3337,92,10580
+2026-08-31,Organic Search,mobile,6366,82,10063
+2026-08-31,Paid Search,desktop,1790,57,6936
+2026-08-31,Paid Search,mobile,3080,45,5378
+2026-08-31,Paid Social,desktop,587,3,300
+2026-08-31,Paid Social,mobile,5616,26,3244
+2026-08-31,Referral,desktop,524,10,1235
+2026-08-31,Referral,mobile,520,3,338
+2026-09-07,Direct,desktop,1621,58,7120
+2026-09-07,Direct,mobile,1813,27,3214
+2026-09-07,Email,desktop,879,39,4630
+2026-09-07,Email,mobile,1235,25,3008
+2026-09-07,Organic Search,desktop,3432,94,10754
+2026-09-07,Organic Search,mobile,6373,75,8928
+2026-09-07,Paid Search,desktop,1757,57,6647
+2026-09-07,Paid Search,mobile,2949,43,5178
+2026-09-07,Paid Social,desktop,585,2,148
+2026-09-07,Paid Social,mobile,5646,25,2809
+2026-09-07,Referral,desktop,495,8,964
+2026-09-07,Referral,mobile,509,4,520
+2026-09-14,Direct,desktop,1690,61,7325
+2026-09-14,Direct,mobile,1796,29,3602
+2026-09-14,Email,desktop,879,41,4885
+2026-09-14,Email,mobile,1202,24,2886
+2026-09-14,Organic Search,desktop,3313,92,10957
+2026-09-14,Organic Search,mobile,6391,81,9889
+2026-09-14,Paid Search,desktop,1771,56,6599
+2026-09-14,Paid Search,mobile,3050,44,5210
+2026-09-14,Paid Social,desktop,602,3,444
+2026-09-14,Paid Social,mobile,5648,25,3091
+2026-09-14,Referral,desktop,511,10,1276
+2026-09-14,Referral,mobile,532,3,330

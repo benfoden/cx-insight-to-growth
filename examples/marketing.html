@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing brief: Fernhill Supply Co.</title>
+<!--
+  voc-report template. Replace every {{...}}. Delete any block you have no data for.
+  Rules: no border wider than 1px. No label above a heading. Do not add blocks to the one-pager.
+  Bar widths: style="width:NN%" where NN = value / largest value in the exhibit x 100.
+  Highlight the one bar the exhibit is about with class "bar hl"; leave the rest as "bar".
+-->
+<style>
+  :root {
+    --navy: #051c2c; --blue: #2251ff; --ink: #1a1a1a; --mid: #4d4d4d; --soft: #808080;
+    --rule: #d9d9d9; --bar: #c7cdd4; --tint: #f5f6f7; --paper: #ffffff;
+  }
+  @page { size: letter; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #eceef0; color: var(--ink);
+         font: 11px/1.55 "Helvetica Neue", Helvetica, Arial, sans-serif;
+         -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 8.5in; min-height: 11in; margin: 24px auto; background: var(--paper);
+          padding: 0.8in 0.85in 0.7in; display: flex; flex-direction: column; }
+  h1 { font: 400 26px/1.25 Georgia, "Times New Roman", serif; color: var(--navy);
+       margin: 0 0 10px; max-width: 6in; letter-spacing: -0.01em; }
+  .meta { color: var(--soft); font-size: 10px; margin: 0 0 22px; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 22px 0 24px; }
+  .kpi b { display: block; font: 400 30px/1.1 Georgia, serif; color: var(--navy); }
+  .kpi span { display: block; color: var(--mid); margin-top: 6px; max-width: 1.9in; }
+  .body { display: grid; grid-template-columns: 1.15fr 1fr; gap: 0.45in; padding-top: 26px; }
+  h2 { font-size: 12px; font-weight: 700; color: var(--navy); margin: 0 0 14px; }
+  .finding { display: grid; grid-template-columns: 22px 1fr; padding: 0 0 18px; }
+  .finding .n { color: var(--blue); font-weight: 700; font-size: 12px; }
+  .finding h3 { font-size: 12px; line-height: 1.4; margin: 0 0 4px; color: var(--ink); }
+  .finding p { margin: 0 0 4px; color: var(--mid); }
+  .finding .next { color: var(--ink); }
+  .finding .next b { color: var(--blue); font-weight: 600; }
+  .exhibit h2 { font-weight: 400; font-size: 12px; line-height: 1.4; color: var(--ink); }
+  .exhibit h2 b { color: var(--navy); }
+  .row { display: grid; grid-template-columns: 1.05in 1fr 0.45in; align-items: center; gap: 8px; margin: 0 0 9px; }
+  .row .lab { color: var(--mid); text-align: right; font-size: 10px; }
+  .row .val { color: var(--ink); font-size: 10px; font-variant-numeric: tabular-nums; }
+  .track { height: 10px; }
+  .bar { display: block; height: 10px; background: var(--bar); }
+  .bar.hl { background: var(--blue); }
+  .bar.b2 { background: var(--navy); }
+  .pair { grid-template-columns: 1.05in 1fr 0.75in; } .pair .track { height: auto; } .pair .bar { height: 7px; margin: 1px 0; }
+  .legend { display: flex; gap: 14px; color: var(--soft); font-size: 9.5px; margin: -6px 0 12px; }
+  .legend i { display: inline-block; width: 8px; height: 8px; margin-right: 5px; vertical-align: -1px; }
+  .source { color: var(--soft); font-size: 9px; margin: 6px 0 0; }
+  blockquote { margin: 28px 0 0; padding: 2px 0 2px 14px; border-left: 1px solid var(--blue);
+               font: italic 12px/1.5 Georgia, serif; color: var(--ink); }
+  blockquote cite { display: block; font: normal 9.5px/1.4 "Helvetica Neue", Arial, sans-serif; color: var(--soft); margin-top: 6px; }
+  .more { margin-top: auto; background: var(--tint); padding: 14px 16px; color: var(--mid); }
+  .more b { color: var(--navy); }
+  .foot { color: var(--soft); font-size: 9px; padding-top: 10px; }
+  /* Detailed follow-up report only (made on request). Same look, more pages, more exhibits. */
+  .section { padding: 22px 0 6px; } .section p { max-width: 6.2in; color: var(--mid); }
+  table { width: 100%; border-collapse: collapse; font-size: 10.5px; margin: 6px 0 4px; }
+  th { text-align: left; font-weight: 700; color: var(--navy); padding: 6px 10px 6px 0; border-bottom: 1px solid var(--navy); }
+  td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  @media print { body { background: none; } .page { margin: 0; min-height: 0; height: 11in; overflow: hidden; } .page + .page { break-before: page; } }
+  @media (max-width: 820px) { .page { width: auto; min-height: 0; margin: 0; padding: 32px 18px; }
+                             .kpis, .body { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>The free-shipping banner makes a promise checkout breaks, and Paid Social rarely converts</h1>
+  <p class="meta">Marketing brief · Fernhill Supply Co. · Jul 27 to Sep 20, 2026 · Sources: GA4 (219,152 sessions), 150 support tickets, support team notes</p>
+  <hr>
+  <div class="kpis"><div class="kpi"><b>1.7%</b><span>conversion in the second half, down from 2.1%</span></div><div class="kpi"><b>0.5%</b><span>Paid Social conversion, on 23% of sessions</span></div><div class="kpi"><b>3.4%</b><span>Email conversion, the best channel</span></div></div>
+  <hr>
+  <div class="body">
+    <div><h2>Key findings</h2><div class="finding"><div class="n">1</div><div><h3>The banner says free shipping but does not say the minimum</h3><p>Shipping cost tickets rose from 8 to 25, and 46% of “free shipping” searches end the visit.</p><p class="next"><b>Next step:</b> Add “on orders over $99” to every banner and ad that says free shipping.</p></div></div><div class="finding"><div class="n">2</div><div><h3>Paid Social brings traffic that does not buy</h3><p>Paid Social has 23% of sessions but converts at 0.5%, against 1.9% for the site.</p><p class="next"><b>Next step:</b> Move part of the Paid Social budget to Email and Paid Search until the landing page is fixed.</p></div></div><div class="finding"><div class="n">3</div><div><h3>Email codes fail on mobile and cost sales</h3><p>16 tickets say a promo code did not work, 94% of them on mobile.</p><p class="next"><b>Next step:</b> Send auto-apply discount links in email, not codes, until the bug is fixed.</p></div></div></div>
+    <div class="exhibit">
+      <h2><b>Exhibit 1:</b> Paid Social converts at 0.5%, the lowest of any channel</h2><div class="row"><span class="lab">Email</span><span class="track"><span class="bar" style="width:100%"></span></span><span class="val">3.4%</span></div><div class="row"><span class="lab">Direct</span><span class="track"><span class="bar" style="width:82%"></span></span><span class="val">2.8%</span></div><div class="row"><span class="lab">Paid Search</span><span class="track"><span class="bar" style="width:68%"></span></span><span class="val">2.3%</span></div><div class="row"><span class="lab">Organic Search</span><span class="track"><span class="bar" style="width:59%"></span></span><span class="val">2.0%</span></div><div class="row"><span class="lab">Referral</span><span class="track"><span class="bar" style="width:35%"></span></span><span class="val">1.2%</span></div><div class="row"><span class="lab">Paid Social</span><span class="track"><span class="bar hl" style="width:15%"></span></span><span class="val">0.5%</span></div>
+      <p class="source">Source: GA4 sessions and purchases by channel, Jul 27 to Sep 20, 2026</p>
+      <blockquote>Did you change the free shipping minimum? The banner says free shipping but at checkout it added $9.95.<cite>Shopper at checkout, mobile, September</cite></blockquote>
+    </div>
+  </div>
+  <div class="more"><b>Want more detail?</b> Ask for a detailed report on any finding or topic, for example
+    "Detailed report on finding 2" or "Deep dive: channel spend".</div>
+  <p class="foot">Numbers are calculated from the source data. Findings and wording are written by AI: check them before external use.</p>
+</div>
+</body>
+</html>

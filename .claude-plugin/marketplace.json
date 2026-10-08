@@ -1,0 +1,13 @@
+{
+  "name": "cx-insight-to-growth",
+  "description": "Customer insight briefs from VoC, sentiment and behavior data.",
+  "owner": { "name": "Ben Foden" },
+  "plugins": [
+    {
+      "name": "cx-insight-to-growth",
+      "source": "./",
+      "description": "One-page customer insight briefs for sales, marketing and product teams.",
+      "version": "1.0.0"
+    }
+  ]
+}
