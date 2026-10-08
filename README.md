@@ -10,7 +10,7 @@ step for each one.
 ## Start here
 
 1. [What you need](#what-you-need)
-2. [Getting started](#set-it-up)
+2. [Getting started](#getting-started)
 3. [Use it](#use-it)
 4. [Before you share a report](#before-you-share-a-report)
 5. [For maintainers](#for-maintainers)
